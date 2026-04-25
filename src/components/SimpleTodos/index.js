@@ -34,30 +34,39 @@ class SimpleTodos extends Component {
     if (inputText.trim() === '') return
 
     const parts = inputText.split(' ')
-    const count = parseInt(parts[parts.length - 1])
+    const count = parseInt(parts[parts.length - 1], 10)
 
-    if (!isNaN(count)) {
+    // Multiple todos case
+    if (!Number.isNaN(count)) {
       const title = parts.slice(0, -1).join(' ')
       const newTodos = []
 
-      for (let i = 0; i < count; i++) {
+      let tempId = uniqueId
+
+      for (let i = 0; i < count; i += 1) {
         newTodos.push({
-          id: uniqueId++,
+          id: tempId,
           title,
           isCompleted: false,
         })
+        tempId += 1
       }
+
+      uniqueId = tempId
 
       this.setState(prev => ({
         todoList: [...prev.todoList, ...newTodos],
         inputText: '',
       }))
     } else {
+      // Single todo case
       const newTodo = {
-        id: uniqueId++,
+        id: uniqueId,
         title: inputText,
         isCompleted: false,
       }
+
+      uniqueId += 1
 
       this.setState(prev => ({
         todoList: [...prev.todoList, newTodo],
@@ -103,7 +112,9 @@ class SimpleTodos extends Component {
               onChange={this.onChangeInput}
               placeholder="Enter todo (or 'task 3')"
             />
-            <button onClick={this.onAddTodo}>Add</button>
+            <button type="button" onClick={this.onAddTodo}>
+              Add
+            </button>
           </div>
 
           <ul>

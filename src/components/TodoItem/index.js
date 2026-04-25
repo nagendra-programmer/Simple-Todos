@@ -47,12 +47,18 @@ class TodoItem extends Component {
 
         <div>
           {isEditing ? (
-            <button onClick={this.onSave}>Save</button>
+            <button type="button" onClick={this.onSave}>
+              Save
+            </button>
           ) : (
-            <button onClick={this.onEditClick}>Edit</button>
+            <button type="button" onClick={this.onEditClick}>
+              Edit
+            </button>
           )}
 
-          <button onClick={() => onDelete(id)}>Delete</button>
+          <button type="button" onClick={() => onDelete(id)}>
+            Delete
+          </button>
         </div>
       </li>
     )

@@ -1,0 +1,44 @@
+/* Write your CSS here */
+.bg-container {
+  min-height: 100vh;
+  background-color: #ffc2a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+  width: 90%;
+  padding-left: 150px;
+}
+
+.heading {
+  color: #ff8542;
+  font-weight: bold;
+  font-family: 'roboto';
+  font-size: 30px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  padding: 8px;
+  flex: 1;
+}

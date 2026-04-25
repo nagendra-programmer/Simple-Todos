@@ -1,0 +1,40 @@
+/* Write your CSS here */
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  color: black;
+  font-family: 'roboto';
+  font-size: 14px;
+}
+
+button {
+  height: 36px;
+  width: 90px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid red;
+  color: red;
+  font-size: 14px;
+  font-family: 'roboto';
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
